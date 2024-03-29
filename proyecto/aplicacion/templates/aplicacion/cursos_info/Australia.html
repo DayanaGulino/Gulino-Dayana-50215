@@ -1,0 +1,52 @@
+{% extends "aplicacion/index.html" %}
+
+{% block titulo %}
+<h1 class="text-white font-weight-bold"> Destino: Australia </h1>
+{% endblock titulo %}
+
+{% block contenido %}
+<h2 style="color: white;">¡En esta sección encuentras la información de este destino!
+
+</h2>
+
+<head>
+    <title>Manual de Australia</title>
+    <style>
+        .button-container {
+            display: inline-block;
+            border: 2px solid blue;
+            border-radius: 10px;
+            overflow: hidden; 
+            background-color: blue;
+        }
+        
+        .button-container a {
+            display: block;
+            padding: 10px;
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            background-size: cover; 
+            border-bottom: 1px solid white; /* Línea divisoria */
+        }
+
+        .button-container a:last-child {
+            border-bottom: none; /* Eliminar la línea divisoria del último botón */
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="button-container">
+<a href="https://docs.google.com/document/d/1H0cIvcShBAC4ZFChNVn77fDyWayJ0E2DPAS0Kgqe2-M/edit#heading=h.t94n42rl5pgd" target="_blank">Ver Manual</a>
+<a href="https://docs.google.com/presentation/d/1Ot-91SdgSO3Pz6nfGZ_f34Ifr9anmHe65I8RVWg6JMY/present?slide=id.gbae2fb41c1_0_0" target="_blank">Visado</a>
+<a href="https://docs.google.com/document/d/1H0cIvcShBAC4ZFChNVn77fDyWayJ0E2DPAS0Kgqe2-M/edit#heading=h.t94n42rl5pgd" target="_blank">Seguro médico</a>
+<a href="https://docs.google.com/document/d/1H0cIvcShBAC4ZFChNVn77fDyWayJ0E2DPAS0Kgqe2-M/edit#heading=h.t94n42rl5pgd" target="_blank">Métodos de pago</a>
+</div>
+
+
+</body>
+</html>
+
+{% endblock contenido %}

@@ -1,0 +1,93 @@
+{% extends "aplicacion/index.html" %}
+
+{% block titulo %}
+<h1 class="text-white font-weight-bold"> Contacto </h1> 
+<hr class="divider">
+{% endblock titulo %}
+
+{% block contenido %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de opciones</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        h2 {
+            text-align: center;
+            margin-top: 30px;
+            color: #ffffff; /* Cambio de color a blanco */
+        }
+        table {
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 70%; /* Haciendo el cuadro más ancho */
+            margin: 20px auto;
+            border-radius: 20px; /* Aumentando el radio de los bordes */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumentando la sombra */
+            background: rgba(255, 255, 255, 0.9); /* Haciendo el fondo del cuadro transparente */
+        }
+        th, td {
+            padding: 20px; /* Aumentando el espaciado */
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-top-left-radius: 20px; /* Añadiendo bordes redondeados en las esquinas */
+            border-top-right-radius: 20px;
+        }
+        td {
+            border-bottom: 1px solid #ddd; /* Agregando una línea divisoria */
+        }
+        tr:last-child td {
+            border-bottom: none; /* Eliminando la línea divisoria en la última fila */
+        }
+        tr:nth-child(even) {
+            background-color: #f8f8f8;
+        }
+        tr:hover {
+            background-color: #f0f0f0;
+        }
+        td a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        td a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2>¡Qué bueno que desees ponerte en contacto con nosotros!</h2> 
+    
+    <table>
+        <tr>
+            <th>Servicio</th>
+            <th>Acción</th>
+        </tr>
+        <tr>
+            <td>Comunicarte con tu KAM</td>
+            <td><a href="mailto:support.growproagents@growproexperience">📧</a></td>
+        </tr>
+        <tr>
+            <td>Hablar con soporte</td>
+            <td><a href="https://compass.growproexperience.com/deals">☎️</a></td> <!-- Cambiar url_para_soporte por la URL correspondiente -->
+        </tr>
+        <tr>
+            <td>Solicitar información sobre finanzas</td>
+            <td><a href="mailto:support.growproagents@growproexperience">📧</a></td>
+        </tr>
+    </table>
+</body>
+</html>
+{% endblock contenido %}

@@ -1,0 +1,118 @@
+{% extends "aplicacion/index.html" %}
+
+{% block titulo %}
+<h1 class="text-white font-weight-bold"> Agencias </h1>
+{% endblock titulo %}
+
+{% block contenido %}
+
+<table>
+    <tr>
+        <td>
+            <a href="{% url 'crear_usuario/' %}" style="background-color: #ffffff; border: 1px solid #000000; color: #000000; text-decoration: none; padding: 5px 10px; border-radius: 5px;">
+                <i class="fas fa-plus fa-lg" title="Crear"></i> Crear nueva agencia
+            </a>
+        </td>
+    </tr>    
+</table>
+<style>
+    .button-wrapper {
+        display: inline-block; /* Para que el div ocupe solo el ancho del contenido */
+        padding: 10px 40px; /* Espaciado interno */
+        background-color: blue; /* Fondo azul */
+        border: 2px solid blue; /* Borde azul */
+        border-radius: 5px; /* Bordes redondeados */
+    }
+
+    .button-wrapper a {
+        text-decoration: none; /* Sin subrayado en el enlace */
+        color: white; /* Color del texto blanco */
+    }
+</style>
+<h2 style="color: white;">Aquí encontrarás toda la información relevante para la organización de la alianza con Grow Pro Agent</h2>
+
+<style>
+    .button-container {
+        display: flex;
+        justify-content: space-around; 
+        flex-wrap: wrap; 
+    }
+
+    .box {
+        width: 200px;
+        height: 200px;
+        background-color: #0d6efd; 
+        border-radius: 10px;
+        margin: 10px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .box:hover {
+        background-color: #0a58ca; 
+    }
+
+    .box-text {
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    .box-emoji {
+        font-size: 50px; 
+        margin-top: 10px;
+    }
+</style>
+
+<div class="container">
+   
+    <div class="button-container">
+        <div class="box" onclick="location.href='#'">
+            <span class="box-text">Documentación</span>
+            <span class="box-emoji">📄</span> 
+        </div>
+        <div class="box" onclick="location.href='#'">
+            <span class="box-text">Estrategia</span>
+            <span class="box-emoji">🚀</span> 
+        </div>
+        <div class="box" onclick="location.href='#'">
+            <span class="box-text">Reportes y Finanzas</span>
+            <span class="box-emoji">💼</span> 
+        </div>
+    </div>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="color: white;">ID</th>
+            <th style="color: white;">Nombre de la Agencia</th>
+            <th style="color: white;">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for agencia in agencias %}
+        <tr>
+            <td style="color: white;">{{ agencia.id }}</td>
+            <td style="color: white;">{{ agencia.nombre_agencia }}</td>
+            <td>
+                <!-- Botón de edición -->
+    <a href="{% url 'agencia_update' agencia.id %}" style="text-decoration: none; color: white; background-color: #007bff; border: 1px solid #007bff; padding: 5px; border-radius: 3px;">
+        <i class="fas fa-pen"></i>
+    </a>
+    <!-- Botón de eliminación -->
+    <a href="{% url 'agencia_delete' agencia.id %}" style="text-decoration: none; color: white; background-color: #ff0000; border: 1px solid #007bff; padding: 5px; border-radius: 3px; margin-right: 5px;">
+        <i class="fas fa-trash"></i>
+    </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock contenido %}

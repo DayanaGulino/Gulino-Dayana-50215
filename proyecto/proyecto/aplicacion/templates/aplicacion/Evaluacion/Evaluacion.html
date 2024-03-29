@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Evaluación</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f5f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #3a56f4;
+            text-align: center;
+        }
+
+        .pregunta {
+            margin-bottom: 20px;
+        }
+
+        .respuesta {
+            margin-left: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #3a56f4;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1e3a8a;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Formulario de Evaluación</h1>
+    <form action="mailto:support.growproagents@growproexperience.com" method="post" enctype="text/plain">
+        {% csrf_token %}
+        <div class="pregunta">
+            <label for="nombre_usuario">¿Cuál es tu nombre?</label>
+            <input type="text" id="nombre_usuario" name="nombre_usuario" required>
+        </div>
+        <div class="pregunta">
+            <label for="nombre_agencia">¿Cuál es el nombre de la agencia para la cual trabajas?</label>
+            <input type="text" id="nombre_agencia" name="nombre_agencia" required>
+        </div>
+        <div class="pregunta">
+            <p>Pregunta 1: ¿Se debe demostrar fondos en Australia?</p>
+            <div class="respuesta">
+                <input type="radio" id="respuesta1a" name="respuesta1" value="a">
+                <label for="respuesta1a">a) Si</label>
+                <input type="radio" id="respuesta1b" name="respuesta1" value="b">
+                <label for="respuesta1b">b) No</label>
+                <input type="radio" id="respuesta1c" name="respuesta1" value="c">
+                <label for="respuesta1c">c) Depende la nacionalidad</label>
+            </div>
+        </div>
+
+        <div class="pregunta">
+            <p>Pregunta 2: ¿Es recomendable este destino para personas que tengan mas de 40 años?</p>
+            <div class="respuesta">
+                <input type="radio" id="respuesta2a" name="respuesta2" value="a">
+                <label for="respuesta2a">a) Siempre que tenga fondos</label>
+                <input type="radio" id="respuesta2b" name="respuesta2" value="b">
+                <label for="respuesta2b">b) no</label>
+                <input type="radio" id="respuesta2c" name="respuesta2" value="c">
+                <label for="respuesta2c">c) Depende de la nacionalidad</label>
+            </div>
+        </div>
+
+        <!-- Agrega aquí las preguntas restantes -->
+
+        <input type="submit" value="Enviar Respuestas">
+    </form>
+</div>
+
+</body>
+</html>

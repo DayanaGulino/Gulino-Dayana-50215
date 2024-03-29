@@ -1,0 +1,8 @@
+setup.py
+Pack1_Clientes/Codigo_general.py
+Pack1_Clientes/Modulo1_extraerdatos.py
+Pack1_Clientes/Modulo2_accioncliente.py
+segunda_entrega_Gulino_Dayana.egg-info/PKG-INFO
+segunda_entrega_Gulino_Dayana.egg-info/SOURCES.txt
+segunda_entrega_Gulino_Dayana.egg-info/dependency_links.txt
+segunda_entrega_Gulino_Dayana.egg-info/top_level.txt

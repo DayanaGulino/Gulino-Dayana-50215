@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django</title>
+</head>
+<body>
+    <h1>Bienvenidos al corso de PYTHON jeje</h1>
+    <h2>está es la segunda clase de django bro</h2>
+    <h3> bienvenido {{nombre}} {{ apellido}}</h3>
+    <h3>Hoy esss: {{hoy|date}}</h3>
+
+    {% for n in notas %}
+
+    
+    {% if n > 6 %}
+    <p style="color:green"> es una nota BUENA!{{ n }}</p>
+
+    {% else %}
+    <p style="color:red"> es una nota MALA!{{ n }}</p>
+    {% endif %}
+        
+    
+    {% endfor %}
+
+</body>
+</html>

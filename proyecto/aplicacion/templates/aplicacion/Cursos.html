@@ -1,0 +1,68 @@
+{% extends "aplicacion/index.html" %}
+
+{% block titulo %}
+<h1 class="text-white font-weight-bold">Cursos </h1> 
+<hr class="divider">
+{% endblock titulo %}
+
+{% block contenido %}
+
+
+<table>
+    <tr>
+        <td>
+            <a href="{% url 'cursoForm/' %}" style="background-color: #ffffff; border: 1px solid #000000; color: #000000; text-decoration: none; padding: 5px 10px; border-radius: 5px;">
+                <i class="fas fa-plus fa-lg" title="Crear"></i> Crear nuevo curso
+            </a>
+        </td>
+    </tr>    
+</table>
+<style>
+    .button-wrapper {
+        display: inline-block; /* Para que el div ocupe solo el ancho del contenido */
+        padding: 10px 40px; /* Espaciado interno */
+        background-color: blue; /* Fondo azul */
+        border: 2px solid blue; /* Borde azul */
+        border-radius: 5px; /* Bordes redondeados */
+    }
+
+    .button-wrapper a {
+        text-decoration: none; /* Sin subrayado en el enlace */
+        color: white; /* Color del texto blanco */
+    }
+</style>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="color: white;">número</th>
+            <th style="color: white;">Cursos</th>
+            <th style="color: white;">Acciones</th>          
+        </tr>
+    </thead>
+    <tbody>
+        {% for c in cursos %}
+        <tr>
+            <td style="color: white;">{{ c.id }}</td>
+            <td>
+                <div class="button-wrapper">
+                    <a href="{% url 'Australia' %}">{{ c.curso }}</a>
+                </div>
+            </td>
+            <td>
+                 <!-- Botón de edición -->
+                 <a href="{% url 'curso_update/' c.id %}" style="text-decoration: none; color: white; background-color: #007bff; border: 1px solid #007bff; padding: 5px; border-radius: 3px;">
+                    <i class="fas fa-pen"></i>
+                </a>
+                <!-- Botón de eliminación -->
+                <a href="{% url 'curso_delete/' c.id %}" style="text-decoration: none; color: white; background-color: #ff0000; border: 1px solid #007bff; padding: 5px; border-radius: 3px; margin-right: 5px;">
+                    <i class="fas fa-trash"></i>
+                </a>
+               
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+

@@ -1,0 +1,44 @@
+{% extends "aplicacion/index.html" %}
+
+{% block titulo %}
+<h1 class="text-white font-weight-bold">Cursos </h1> 
+<hr class="divider">
+{% endblock titulo %}
+
+{% block contenido %}
+<style>
+    .button-wrapper {
+        display: inline-block; /* Para que el div ocupe solo el ancho del contenido */
+        padding: 10px 40px; /* Espaciado interno */
+        background-color: blue; /* Fondo azul */
+        border: 2px solid blue; /* Borde azul */
+        border-radius: 5px; /* Bordes redondeados */
+    }
+
+    .button-wrapper a {
+        text-decoration: none; /* Sin subrayado en el enlace */
+        color: white; /* Color del texto blanco */
+    }
+</style>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="color: white;">número</th>
+            <th style="color: white;">Cursos</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        {% for c in cursos %}
+        <tr>
+            <td style="color: white;">{{ c.id }}</td>
+            <td style="color: white;">{{ c.nombre }}</td>
+            <td style="color: white;">{{ c.comision }}</td>
+            <td><div class="button-wrapper"><a href="{% url 'Australia' %}">{{ c.curso }}</a></div></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+

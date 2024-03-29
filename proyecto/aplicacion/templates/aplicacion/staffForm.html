@@ -1,0 +1,17 @@
+{% extends "aplicacion/index.html" %}
+
+{% block contenido %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.nombre.label_tag }}
+    {{ form.nombre }}
+    <br>
+    {{ form.apellido.label_tag }}
+    {{ form.apellido }}
+    <br>
+    {{ form.email.label_tag }}
+    {{ form.email }}
+    <br>
+    <input type="submit" value="Guardar">
+</form>
+{% endblock %}
